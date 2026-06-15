@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>IKAD Hotel & Suites | Yaba Menu & Guest Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Playfair Display for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#ffffff;color:#222222;font-family:'Montserrat',sans-serif}
+    .gold-text{color:#d4af37}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    .luxury-header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid rgba(212,175,55,0.18);padding-bottom:16px}
+    .hotel-name{font-family:'Playfair Display',serif;font-size:1.8rem}
+    .tagline{font-style:italic;text-align:right}
+    .contact-bar{display:flex;flex-wrap:wrap;gap:12px;background:#f8f9fa;padding:12px;border-radius:12px;margin:18px 0;border:1px solid rgba(34,34,34,0.06)}
+    .hero{border-radius:14px;overflow:hidden;background:url('https://source.unsplash.com/1200x400/?restaurant,dining') center/cover;height:260px;position:relative}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.9));display:flex;align-items:center;justify-content:center;color:#111}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin:18px 0;color:#111}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+    .menu-card{background:#ffffff;padding:12px;border-radius:12px;border:1px solid rgba(34,34,34,0.06);overflow-wrap:anywhere;word-wrap:break-word;box-shadow:0 6px 18px rgba(18,18,18,0.04)}
+    /* item header uses flex with name allowed to wrap while price stays fixed on the right */
+    .item-header{display:flex;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(34,34,34,0.06);gap:12px}
+    .item-name{font-family:'Cormorant Garamond',serif;flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+    .item-price{color:#b8860b;font-weight:700;flex:0 0 auto;white-space:nowrap;margin-left:8px}
+    /* ensure generic spans inside item-header behave like name/price columns */
+    .item-header > span:first-child{flex:1 1 auto;min-width:0;overflow-wrap:anywhere}
+    .item-header > span:last-child{flex:0 0 auto;white-space:nowrap;color:#d4af37;font-weight:700;margin-left:8px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+    .intercom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+    footer{text-align:center;margin-top:22px;padding-top:12px;border-top:1px solid #201a15;font-size:0.9rem;opacity:0.85}
+    @media(max-width:760px){.luxury-header{flex-direction:column;text-align:center}.two-col{grid-template-columns:1fr}}
+    .btn-call{background:#d4af37;color:#080605;padding:6px 12px;border-radius:28px;text-decoration:none;font-weight:700}
+    /* Responsive tweaks */
+    @media (max-width: 1024px) {
+      .card-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+      .hero { min-height: 200px; }
+      .section-title { font-size: 1.4rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 12px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .luxury-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .tagline { text-align:left; }
+      .menu-card { padding: 10px; }
+      .item-header > span:first-child{overflow-wrap:anywhere}
+      #cart-modal { width: calc(100% - 32px) !important; right: 16px !important; left: 16px !important; bottom: 80px !important; }
+      #cart-fab { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="luxury-header">
+      <div style="display:flex;align-items:center;gap:12px">
+        <img src="image.png" alt="IKAD logo" style="width:64px;height:64px;object-fit:cover;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.4)">
+        <div>
+          <div class="hotel-name">IKAD <span class="gold-text">HOTEL AND SUITES</span></div>
+          <div style="font-size:0.9rem;opacity:0.9">Classic Luxury · Exclusive Privacy</div>
+        </div>
+      </div>
+      <div class="tagline">
+        <div>270 Borno Way off Adekunle Street, Yaba, Lagos</div>
+        <div style="margin-top:6px"><a class="btn-call" href="tel:+2348147318331">+234 814 731 8331</a></div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <div><i class="fas fa-phone-alt gold-text"></i> Reception: <strong>101</strong></div>
+      <div><i class="fas fa-cocktail gold-text"></i> Bar: <strong>110</strong></div>
+      <div><i class="fas fa-utensils gold-text"></i> Kitchen: <strong>108</strong></div>
+      <div style="flex:1;text-align:right">Tel: +234 814 731 8331</div>
+    </div>
+
+    <div class="hero"><div class="overlay"><div style="text-align:center;color:#111"><h2 class="section-title">In-Room Menu & Guest Directory</h2><p style="max-width:720px;opacity:0.95">Transcribed menu & intercom directory for IKAD — as printed in the guest folder.</p></div></div></div>
+
+    <!-- COMMUNICATIONS (from image) -->
+    <div style="margin-top:18px">
+      <h3 class="section-title"><i class="fas fa-phone gold-text"></i> Communications</h3>
+      <div class="menu-card no-add">
+        <div class="item-header"><span class="item-name">Bar</span><span class="item-price">110</span></div>
+        <div class="item-header"><span class="item-name">Reception</span><span class="item-price">101</span></div>
+        <div class="item-header"><span class="item-name">Kitchen</span><span class="item-price">108</span></div>
+      </div>
+    </div>
+
+    <!-- ROOM CATEGORIES -->
+    <div style="margin-top:18px">
+      <h3 class="section-title"><i class="fas fa-bed gold-text"></i> Room Categories</h3>
+      <div class="card-grid">
+        <div class="menu-card">
+          <div class="item-header"><span class="item-name">Standard Room</span><span class="item-price">₦20,000</span></div>
+          <div class="item-header"><span class="item-name">Deluxe Room</span><span class="item-price">₦25,000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD MENU (transcribed) -->
+    <h3 class="section-title">Food Menu</h3>
+    <div class="card-grid">
+      <div class="menu-card">
+        <div class="item-header"><span class="item-name">Noodles & Fried/Boiled Egg</span><span class="item-price">₦4,500</span></div>
+        <div class="item-header"><span class="item-name">Noodles & Chicken</span><span class="item-price">₦6,500</span></div>
+        <div class="item-header"><span class="item-name">Noodles & Turkey</span><span class="item-price">₦6,500</span></div>
+        <div class="item-header"><span class="item-name">Noodles & Fish</span><span class="item-price">₦5,500</span></div>
+        <div class="item-header"><span class="item-name">Noodles & Beef</span><span class="item-price">₦6,500</span></div>
+        <hr style="border-color:transparent;border-top:1px dotted #2a241c;margin:10px 0">
+        <div class="item-header"><span class="item-name">White Rice & Chicken</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">White Rice & Turkey</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">White Rice & Fish</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">White Rice & Beef</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">Jollof Rice & Chicken</span><span class="item-price">₦7,500</span></div>
+        <div class="item-header"><span class="item-name">Jollof Rice & Turkey</span><span class="item-price">₦7,500</span></div>
+        <div class="item-header"><span class="item-name">Jollof Rice & Beef</span><span class="item-price">₦7,500</span></div>
+        <div class="item-header"><span class="item-name">Chicken & Chips</span><span class="item-price">₦6,500</span></div>
+        <div class="item-header"><span class="item-name">Turkey & Chips</span><span class="item-price">₦6,500</span></div>
+      </div>
+
+      <div class="menu-card">
+        <div class="item-header"><span class="item-name">Poundo / Egusi / Turkey</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">Semo / Ogbono / Chicken</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">Eba / Vegetable / Fish</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">Poundo / Eforiro / Beef</span><span class="item-price">₦7,000</span></div>
+        <div class="item-header"><span class="item-name">Swallow / Soup / Protein</span><span class="item-price">₦1,500</span></div>
+        <div class="item-header"><span class="item-name">Extra Poundo / Semo / Eba</span><span class="item-price">₦3,000</span></div>
+        <div class="item-header"><span class="item-name">Extra Noodles (2)</span><span class="item-price">₦3,000</span></div>
+        <hr style="border-color:transparent;border-top:1px dotted #2a241c;margin:10px 0">
+        <div class="item-header"><span class="item-name">Peppered Turkey</span><span class="item-price">₦5,000</span></div>
+        <div class="item-header"><span class="item-name">Peppered Chicken</span><span class="item-price">₦5,000</span></div>
+        <div class="item-header"><span class="item-name">Peppered Fish</span><span class="item-price">₦5,000</span></div>
+        <div class="item-header"><span class="item-name">Peppered Beef</span><span class="item-price">₦5,000</span></div>
+        <div class="item-header"><span class="item-name">Extra Boiled/Fried Egg</span><span class="item-price">₦1,500</span></div>
+      </div>
+    </div>
+
+    <!-- ADD-ONS: breakfast add-on -->
+    <div style="margin-top:12px;">
+      <div class="card-grid">
+        <div class="menu-card">
+          <div class="item-header"><span class="item-name">Breakfast (add-on)</span><span class="item-price">₦5,000</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRINK LIST (transcribed) -->
+    <h3 class="section-title">Drink List</h3>
+    <div class="card-grid">
+      <div class="menu-card">
+        <strong>Beer</strong>
+        <div class="item-header"><span>Big Stout</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Small Stout</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Desperado (can)</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Heineken</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Trophy</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Star</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Goldberg</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>33 Export</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Budweiser</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Smirnoff Ice (can)</span><span class="item-price">₦1,500</span></div>
+      </div>
+
+      <div class="menu-card">
+        <strong>Juice & Soft Drinks</strong>
+        <div class="item-header"><span>5 Alive (Pulp)</span><span class="item-price">₦3,000</span></div>
+        <div class="item-header"><span>5 Alive Berry Blast</span><span class="item-price">₦3,000</span></div>
+        <div class="item-header"><span>Hollandia</span><span class="item-price">₦3,000</span></div>
+        <div class="item-header"><span>Chivita Active / Orange</span><span class="item-price">₦3,000</span></div>
+        <div class="item-header"><span>Malta Guinness (can)</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Fayrouz (can)</span><span class="item-price">₦1,500</span></div>
+        <div class="item-header"><span>Fanta / Sprite / Coke</span><span class="item-price">₦1,500</span></div>
+        <div class="item-header"><span>Bottle Water</span><span class="item-price">₦500</span></div>
+      </div>
+
+      <div class="menu-card">
+        <strong>Energy Drinks</strong>
+        <div class="item-header"><span>Monster</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Red Bull</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Black Bullet</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Power Horse</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Fearless</span><span class="item-price">₦1,500</span></div>
+        <div class="item-header"><span>Predator</span><span class="item-price">₦1,500</span></div>
+      </div>
+
+      <div class="menu-card">
+        <strong>Local Spirit / Congac / Whiskey / Wine</strong>
+        <div class="item-header"><span>Plastic Orijin</span><span class="item-price">₦2,000</span></div>
+        <div class="item-header"><span>Action Bitters (big/small)</span><span class="item-price">₦2,000 / ₦1,000</span></div>
+        <div class="item-header"><span>Best Whiskey (Big)</span><span class="item-price">₦9,000</span></div>
+        <div class="item-header"><span>Best Whiskey (Small)</span><span class="item-price">₦2,500</span></div>
+        <div class="item-header"><span>Magic Moment (Big)</span><span class="item-price">₦10,000</span></div>
+        <div class="item-header"><span>Hennessy VSOP</span><span class="item-price">₦130,000</span></div>
+        <div class="item-header"><span>Hennessy VS</span><span class="item-price">₦80,000</span></div>
+        <div class="item-header"><span>Jameson Green</span><span class="item-price">₦35,000</span></div>
+        <div class="item-header"><span>Red Label</span><span class="item-price">₦25,000</span></div>
+        <div class="item-header"><span>William Lawson's</span><span class="item-price">₦20,000</span></div>
+        <div class="item-header"><span>Wine (Cuerpo / Two Oceans / Drostdy)</span><span class="item-price">₦8,000</span></div>
+        <div class="item-header"><span>Andre Rose</span><span class="item-price">₦20,000</span></div>
+        <div class="item-header"><span>Veleta</span><span class="item-price">₦19,000</span></div>
+      </div>
+    </div>
+
+    <!-- ROOM NUMBERS / INTERCOM (from image) -->
+    <div style="margin-top:18px">
+      <h3 class="section-title">Room Numbers & Intercom</h3>
+      <div class="menu-card two-col">
+        <div>
+          <strong>Room Numbers</strong>
+          <div style="margin-top:8px">            
+            <div class="item-header"><span>Reception</span><span>101</span></div>
+            <div class="item-header"><span>Bar</span><span>110</span></div>
+            <div class="item-header"><span>Kitchen</span><span>108</span></div>
+          </div>
+        </div>        
+    </div>
+
+    <footer>
+      <p>270 Borno Way off Adekunle Street, Yaba, Lagos</p>
+      <p>Reservations: <a class="btn-call" href="tel:+2348147318331">+234 814 731 8331</a></p>
+      <p>© 2026 IKAD HOTEL AND SUITES — Classic Luxury, Exclusive Privacy</p>
+    </footer>
+  </div>
+
+  <!-- Cart & WhatsApp order UI -->
+  <div id="cart-fab" style="position:fixed;right:18px;bottom:18px;z-index:9999;">
+    <button id="cart-open" style="background:#d4af37;border:none;padding:12px 16px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,0.4);font-weight:700;">Cart (<span id="cart-count">0</span>)</button>
+  </div>
+
+  <div id="cart-modal" style="display:none;position:fixed;right:20px;bottom:80px;width:360px;max-height:70vh;background:#0e0b08;border:1px solid #2a221c;border-radius:12px;padding:12px;overflow:auto;z-index:10000;box-shadow:0 10px 40px rgba(0,0,0,0.6);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <strong>Your Order</strong>
+      <button id="cart-close" style="background:transparent;border:0;color:#d4af37;font-weight:700;">Close</button>
+    </div>
+    <div id="cart-items"></div>
+    <div style="border-top:1px dashed #2a221c;margin-top:8px;padding-top:8px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span>Total</span><strong id="cart-total">₦0</strong></div>
+      <label style="display:block;font-size:0.85rem;margin-bottom:6px;color:#ccc;">Send To Department</label>
+      <div style="display:flex;gap:6px;margin-bottom:6px;align-items:center;"><select id="department" style="flex:1;padding:6px;border-radius:6px;background:#13100c;border:1px solid #2a221c;color:#e9dbc3;"><option value="Reception">Reception</option><option value="Bar">Bar</option><option value="Kitchen">Kitchen</option></select>
+      <button id="compose-ai" style="background:#d4af37;border:none;padding:6px 10px;border-radius:8px;font-weight:600;">Compose</button></div>
+      <textarea id="order-message" rows="4" style="width:100%;background:#0a0704;border:1px solid #2a221c;color:#e9dbc3;padding:8px;border-radius:6px;margin-bottom:8px;" placeholder="Order message (editable)"></textarea>
+      <div style="display:flex;gap:8px;">
+        <button id="whatsapp-send" style="flex:1;background:#25D366;border:none;color:#042; padding:8px 10px;border-radius:8px;font-weight:700;">Place Order on WhatsApp</button>
+        <button id="clear-cart" style="background:#333;border:none;color:#e9dbc3;padding:8px 10px;border-radius:8px;">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    const storageKey = 'yaba_cart';
+    const hotelPhone = '+2348147318331';
+    const cart = JSON.parse(localStorage.getItem(storageKey)||'{}');
+    function save(){ localStorage.setItem(storageKey, JSON.stringify(cart)); updateUI(); }
+    function addItem(name, price){ if(!cart.items) cart.items = {}; const key = name; if(!cart.items[key]) cart.items[key] = {name, price, qty:0}; cart.items[key].qty++; save(); }
+    function removeItem(key){ if(cart.items && cart.items[key]){ delete cart.items[key]; save(); } }
+    function setQty(key, qty){ if(cart.items && cart.items[key]){ cart.items[key].qty = qty; if(qty<=0) delete cart.items[key]; save(); } }
+    function formatPrice(n){ return '₦' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+    function parsePrice(text){ if(!text) return 0; const m = text.replace(/[₦,\s]/g,'').match(/(\d+)/g); if(!m) return 0; return parseInt(m.join(''),10); }
+
+    // add buttons to item headers
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.item-header').forEach(h => {
+        if(h.querySelector('.add-btn')) return;
+        // skip intercom / room-number / explicitly marked no-add entries
+        const isIntercom = !!h.closest('.intercom-grid');
+        const isNoAdd = !!h.closest('.no-add');
+        const colAncestor = h.closest('.two-col');
+        const isRoomNumbers = colAncestor && colAncestor.querySelector('strong') && /Room Numbers/i.test(colAncestor.querySelector('strong').textContent);
+        if (isIntercom || isRoomNumbers || isNoAdd) return;
+        const spans = h.querySelectorAll('span');
+        if(spans.length<2) return;
+        const name = spans[0].textContent.trim();
+        const priceText = spans[1].textContent.trim();
+        const price = parsePrice(priceText);
+        const btn = document.createElement('button'); btn.className='add-btn'; btn.textContent='Add';
+        btn.style.cssText='margin-left:8px;background:#d4af37;border:0;padding:6px 8px;border-radius:8px;font-weight:700;cursor:pointer';
+        btn.addEventListener('click', ()=>{ if(price) addItem(name, price); else {
+          const msg = document.getElementById('order-message'); msg.value = (msg.value?msg.value+'\n':'' ) + name + ' - please advise price'; document.getElementById('cart-open').click();
+        }});
+        h.appendChild(btn);
+      });
+      updateUI();
+    });
+
+    const cartOpen = document.getElementById('cart-open');
+    const cartClose = document.getElementById('cart-close');
+    const cartModal = document.getElementById('cart-modal');
+    cartOpen.addEventListener('click', ()=>{ cartModal.style.display='block'; updateUI(); });
+    cartClose.addEventListener('click', ()=>{ cartModal.style.display='none'; });
+    document.getElementById('clear-cart').addEventListener('click', ()=>{ cart.items={}; save(); });
+
+    function cartCount(){ if(!cart.items) return 0; return Object.values(cart.items).reduce((s,i)=>s+i.qty,0); }
+    function cartTotal(){ if(!cart.items) return 0; return Object.values(cart.items).reduce((s,i)=>s+i.qty*i.price,0); }
+
+    function updateUI(){
+      document.getElementById('cart-count').textContent = cartCount();
+      const container = document.getElementById('cart-items'); container.innerHTML='';
+      if(cart.items){ Object.values(cart.items).forEach(it =>{
+        const row = document.createElement('div'); row.style.display='flex'; row.style.justifyContent='space-between'; row.style.alignItems='center'; row.style.marginBottom='6px';
+        const left = document.createElement('div'); left.textContent = `${it.name} x${it.qty}`; left.style.flex='1'; left.style.marginRight='8px';
+        const right = document.createElement('div'); right.style.display='flex'; right.style.alignItems='center';
+        const minus = document.createElement('button'); minus.textContent='-'; minus.style.marginRight='6px'; minus.addEventListener('click', ()=> setQty(it.name, it.qty-1));
+        const plus = document.createElement('button'); plus.textContent='+'; plus.style.marginLeft='6px'; plus.addEventListener('click', ()=> setQty(it.name, it.qty+1));
+        const priceEl = document.createElement('div'); priceEl.textContent = formatPrice(it.price*it.qty); priceEl.style.marginLeft='8px'; priceEl.style.fontWeight='700';
+        right.appendChild(minus); right.appendChild(priceEl); right.appendChild(plus);
+        row.appendChild(left); row.appendChild(right); container.appendChild(row);
+      }); }
+      document.getElementById('cart-total').textContent = formatPrice(cartTotal());
+      const msgEl = document.getElementById('order-message'); if(msgEl && (!msgEl.value || msgEl.value.trim()==='')) msgEl.value = defaultMessage();
+    }
+
+    function defaultMessage(){ if(!cart.items) return ''; let lines=[]; Object.values(cart.items||{}).forEach(i=> lines.push(`${i.name} x${i.qty} = ${formatPrice(i.price*i.qty)}`)); lines.push(`Total: ${formatPrice(cartTotal())}`); lines.push('Please deliver to my room.'); return lines.join('\n'); }
+
+    document.getElementById('compose-ai').addEventListener('click', ()=>{
+      const template = document.getElementById('department').value;
+      let base = defaultMessage();
+      base = `Hello ${template},\nI would like to place this order:\n\n${base}\n\nThanks,\n[Your Name]`;
+      document.getElementById('order-message').value = base;
+    });
+
+    document.getElementById('whatsapp-send').addEventListener('click', ()=>{
+      const dept = document.getElementById('department').value;
+      const text = document.getElementById('order-message').value.trim(); if(!text) return alert('Please add items to your order.');
+      const message = `${text}\n\nDepartment: ${dept}`;
+      const url = `https://wa.me/${hotelPhone.replace(/[^\d]/g,'')}?text=` + encodeURIComponent(message);
+      window.open(url, '_blank');
+    });
+
+  })();
+  </script>
+</body>
+</html>
