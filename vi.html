@@ -15,9 +15,9 @@
     }
 
     body {
-      background: #ffffff;  /* white / bootstrap-like */
+      background: #0a0704;  /* deep charcoal luxury base */
       font-family: 'Montserrat', sans-serif;
-      color: #222222; /* dark text for readability */
+      color: #e9dbc3;
       line-height: 1.5;
     }
 
@@ -47,9 +47,9 @@
     /* header with logo concept & hotel identity */
     .luxury-header {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
       margin-bottom: 2.5rem;
       padding-bottom: 1.5rem;
       border-bottom: 2px solid rgba(212, 175, 55, 0.4);
@@ -61,26 +61,27 @@
       gap: 1rem;
     }
     .logo-icon {
-      background: #d4af37;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      background: transparent; /* remove gold background */
+      width: 140px;
+      height: 140px;
+      border-radius: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      margin-bottom: 12px;
     }
     .logo-icon i {
       font-size: 2.2rem;
       color: #1e1a15;
     }
     .hotel-logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
       object-fit: cover;
       display: block;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     .hero {
       margin-top: 1.8rem;
@@ -96,12 +97,11 @@
     .hero .overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+      background: linear-gradient(180deg, rgba(10,7,4,0.25), rgba(10,7,4,0.6));
       display:flex;align-items:center;justify-content:center;padding:2rem;
-      color: #111111;
     }
-    .hero h2 { color: #111111; font-size:2.2rem; margin-bottom:0.4rem; }
-    .hero p { color: rgba(34,34,34,0.85); max-width:720px; text-align:center; }
+    .hero h2 { color: #fff; font-size:2.2rem; margin-bottom:0.4rem; }
+    .hero p { color: rgba(255,255,255,0.9); max-width:720px; text-align:center; }
     .hotel-name {
       font-size: 2rem;
       font-weight: 700;
@@ -119,9 +119,8 @@
       text-align: right;
       font-style: italic;
       font-size: 1rem;
-      border-left: 2px solid rgba(184,134,11,0.18);
+      border-left: 2px solid #d4af37;
       padding-left: 1rem;
-      color: #333;
     }
     .tagline p {
       font-size: 0.9rem;
@@ -130,16 +129,16 @@
 
     /* contact bars */
     .contact-bar {
-      background: #f8f9fa; /* bootstrap light */
-      border-radius: 12px;
-      padding: 0.8rem 1rem;
+      background: #16120e;
+      border-radius: 20px;
+      padding: 1rem 2rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-      border: 1px solid rgba(34,34,34,0.06);
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
     .contact-item i {
       color: #d4af37;
@@ -172,25 +171,25 @@
       gap: 1.5rem;
     }
     .menu-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 1rem;
-      transition: all 0.18s ease;
-      border: 1px solid rgba(34,34,34,0.06);
-      box-shadow: 0 6px 18px rgba(18,18,18,0.06);
+      background: #13100c;
+      border-radius: 24px;
+      padding: 1.2rem 1.2rem;
+      transition: all 0.25s ease;
+      border: 1px solid #2c241e;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       overflow-wrap: anywhere;
       word-wrap: break-word;
     }
     .menu-card:hover {
-      border-color: rgba(184,134,11,0.25);
+      border-color: #d4af37;
       transform: translateY(-4px);
-      background: #fffefc;
+      background: #181411;
     }
     .item-header {
       display: flex;
       align-items: center;
-      padding: 8px 0;
-      border-bottom: 1px dashed rgba(34,34,34,0.06);
+      padding: 6px 0;
+      border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
       margin-bottom: 0.5rem;
       gap: 12px;
     }
@@ -205,8 +204,8 @@
     }
     .item-price {
       font-weight: 600;
-      color: #b8860b; /* warm gold on white */
-      font-size: 1.05rem;
+      color: #d4af37;
+      font-size: 1.1rem;
       flex: 0 0 auto;
       white-space: nowrap;
       margin-left: 8px;
